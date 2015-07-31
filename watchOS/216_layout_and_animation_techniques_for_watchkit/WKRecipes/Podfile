@@ -16,8 +16,12 @@ def import_pods
   # source 'https://github.com/CocoaPods/Specs.git'
   # platform :ios, '8.0'
   # for swift [!], Pods written in Swift can only be integrated as frameworks; this feature is still in beta. Add `use_frameworks!` to your Podfile or target to opt into using it. The Swift Pod being used is: Alamofire
+  # https://github.com/Alamofire/Alamofire/tree/swift-2.0 -> not swift 1.2
+  # see KPI - https://github.com/Alamofire/Alamofire/tree/swift-2.0
   use_frameworks!
-  pod 'Alamofire', '~> 1.3'
+  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift-2.0'
+  # release swift 1.2
+  # pod 'Alamofire', '~> 1.3' 
 
   # https://github.com/pkluz/PKRevealController
   pod 'PKRevealController'
