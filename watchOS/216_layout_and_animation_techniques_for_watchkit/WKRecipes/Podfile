@@ -1,0 +1,57 @@
+=begin
+iOS libraries required by iContests
+=end
+# comments for podfile, http://stackoverflow.com/questions/22634815/comments-in-cocoapods
+
+platform :ios, 8.0
+# for workspace, disabled now
+xcodeproj 'WKRecipes.xcodeproj'
+
+# see : to avoid multi-products with pod default, you must reset setting to "None", then generate for target pod list, otherwise, the following target will share one default pod file
+# link_with ['WKRecipes', 'WKRecipesTests']
+
+# see inherited https://github.com/CocoaPods/CocoaPods/issues/1729
+def import_pods
+  # just disable it, see https://github.com/Alamofire/Alamofire
+  # source 'https://github.com/CocoaPods/Specs.git'
+  # platform :ios, '8.0'
+  # for swift [!], Pods written in Swift can only be integrated as frameworks; this feature is still in beta. Add `use_frameworks!` to your Podfile or target to opt into using it. The Swift Pod being used is: Alamofire
+  use_frameworks!
+  pod 'Alamofire', '~> 1.3'
+
+  # https://github.com/pkluz/PKRevealController
+  pod 'PKRevealController'
+  pod 'MKNetworkKit', '~>0.87'
+  pod 'LibBPush', :git => 'https://github.com/llv22/LibBPush.git', :tag => '1.3.0'
+  pod 'Mantle', '~>2.0'
+  # html to nsattributetext, see https://github.com/Cocoanetics/DTCoreText
+  pod 'DTCoreText', '~>1.6.15' 
+  # https://github.com/dzenbot/DZNEmptyDataSet
+  # https://github.com/TransitApp/SVProgressHUD
+
+end
+
+# see :exclusive => true in https://guides.cocoapods.org/syntax/podfile.html#target
+target :WKRecipes do
+  platform :ios, '8.3'
+  import_pods
+  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+  link_with 'WKRecipes'
+end
+
+target :WKRecipesTests do
+  platform :ios, '8.3'  
+  import_pods
+  link_with 'WKRecipesTests'
+end
+
+# post install hook, see http://guides.cocoapods.org/syntax/podfile.html#post_install
+# about cocoapods in https://github.com/CocoaPods/CocoaPods/issues/1322
+# solution for up-to-date changes, see https://guides.cocoapods.org/syntax/podfile.html#post_install
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+    end
+  end
+end

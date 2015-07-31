@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0621145B0A3A44F415DD9170 /* Pods_WKRecipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287303CC59AE5E06A3A70E61 /* Pods_WKRecipes.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BCACD781A6ED2F4630F1B409 /* Pods_WKRecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B2F3FFE6926670B72CD357 /* Pods_WKRecipesTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E1E389AA1B426D9C006258AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E389A91B426D9C006258AC /* AppDelegate.swift */; };
 		E1E389AC1B426D9C006258AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E389AB1B426D9C006258AC /* ViewController.swift */; };
 		E1E389AF1B426D9C006258AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E389AD1B426D9C006258AC /* Main.storyboard */; };
@@ -35,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		287303CC59AE5E06A3A70E61 /* Pods_WKRecipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WKRecipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BA0F9E0BF0C7C6539DB339B /* Pods-WKRecipesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKRecipesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WKRecipesTests/Pods-WKRecipesTests.release.xcconfig"; sourceTree = "<group>"; };
+		87C7937ACE4251EB873AE718 /* Pods-WKRecipesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKRecipesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WKRecipesTests/Pods-WKRecipesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B1B2F3FFE6926670B72CD357 /* Pods_WKRecipesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WKRecipesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4FFFCB734417532255E82B7 /* Pods-WKRecipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKRecipes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WKRecipes/Pods-WKRecipes.debug.xcconfig"; sourceTree = "<group>"; };
+		DE1028BCE698D0813FCD4E8F /* Pods-WKRecipes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKRecipes.release.xcconfig"; path = "Pods/Target Support Files/Pods-WKRecipes/Pods-WKRecipes.release.xcconfig"; sourceTree = "<group>"; };
 		E1E389A61B426D9C006258AC /* WKRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E389A91B426D9C006258AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1E389AB1B426D9C006258AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0621145B0A3A44F415DD9170 /* Pods_WKRecipes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCACD781A6ED2F4630F1B409 /* Pods_WKRecipesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +86,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10C90ED6225BDD9FB69B60DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4FFFCB734417532255E82B7 /* Pods-WKRecipes.debug.xcconfig */,
+				DE1028BCE698D0813FCD4E8F /* Pods-WKRecipes.release.xcconfig */,
+				87C7937ACE4251EB873AE718 /* Pods-WKRecipesTests.debug.xcconfig */,
+				5BA0F9E0BF0C7C6539DB339B /* Pods-WKRecipesTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E1E3899D1B426D9C006258AC = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +104,8 @@
 				E1E389C01B426D9D006258AC /* WKRecipesTests */,
 				E1E389CB1B426D9D006258AC /* WKRecipesUITests */,
 				E1E389A71B426D9C006258AC /* Products */,
+				10C90ED6225BDD9FB69B60DB /* Pods */,
+				E2B21159E8F07CD6F1594D93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +151,15 @@
 			path = WKRecipesUITests;
 			sourceTree = "<group>";
 		};
+		E2B21159E8F07CD6F1594D93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				287303CC59AE5E06A3A70E61 /* Pods_WKRecipes.framework */,
+				B1B2F3FFE6926670B72CD357 /* Pods_WKRecipesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1E389D11B426D9D006258AC /* Build configuration list for PBXNativeTarget "WKRecipes" */;
 			buildPhases = (
+				A3D961009F8EE8E5391782A7 /* Check Pods Manifest.lock */,
 				E1E389A21B426D9C006258AC /* Sources */,
 				E1E389A31B426D9C006258AC /* Frameworks */,
 				E1E389A41B426D9C006258AC /* Resources */,
+				BDC8337F7A1E6FDBCFE66CB8 /* Copy Pods Resources */,
+				506D87AD82D474019F8F35AD /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1E389D41B426D9D006258AC /* Build configuration list for PBXNativeTarget "WKRecipesTests" */;
 			buildPhases = (
+				3837C68C81970F69BE796792 /* Check Pods Manifest.lock */,
 				E1E389B91B426D9D006258AC /* Sources */,
 				E1E389BA1B426D9D006258AC /* Frameworks */,
 				E1E389BB1B426D9D006258AC /* Resources */,
+				729BE36C0F51348A169EACE4 /* Embed Pods Frameworks */,
+				44E5EC54D05DE64237709CFD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +291,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3837C68C81970F69BE796792 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		44E5EC54D05DE64237709CFD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WKRecipesTests/Pods-WKRecipesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		506D87AD82D474019F8F35AD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WKRecipes/Pods-WKRecipes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		729BE36C0F51348A169EACE4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WKRecipesTests/Pods-WKRecipesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3D961009F8EE8E5391782A7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BDC8337F7A1E6FDBCFE66CB8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WKRecipes/Pods-WKRecipes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1E389A21B426D9C006258AC /* Sources */ = {
@@ -401,6 +532,7 @@
 		};
 		E1E389D21B426D9D006258AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4FFFCB734417532255E82B7 /* Pods-WKRecipes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -415,6 +547,7 @@
 		};
 		E1E389D31B426D9D006258AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE1028BCE698D0813FCD4E8F /* Pods-WKRecipes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -429,6 +562,7 @@
 		};
 		E1E389D51B426D9D006258AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87C7937ACE4251EB873AE718 /* Pods-WKRecipesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WKRecipesTests/Info.plist;
@@ -441,6 +575,7 @@
 		};
 		E1E389D61B426D9D006258AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BA0F9E0BF0C7C6539DB339B /* Pods-WKRecipesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WKRecipesTests/Info.plist;
