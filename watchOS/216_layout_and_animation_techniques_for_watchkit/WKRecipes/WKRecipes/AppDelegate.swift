@@ -8,16 +8,78 @@
 
 import UIKit
 import CoreData
+import PKRevealController
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
 
-    var window: UIWindow?
-
+    var window: UIWindow?;
+    var revealController: PKRevealController?;
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        // Step 1: Create your controllers.
+        let frontViewController = UIViewController();
+        frontViewController.view.backgroundColor = UIColor.orangeColor();
+
+        let frontNavigationController = UINavigationController(rootViewController: frontViewController);
+        let rightViewController = UIViewController();
+        rightViewController.view.backgroundColor = UIColor.redColor();
+
+        // Step 2: Instantiate.
+        self.revealController = PKRevealController(frontViewController: frontNavigationController, leftViewController: self.leftViewController(), rightViewController: self.rightViewController());
+        // Step 3: Configure.
+        self.revealController!.delegate = self;
+        self.revealController!.animationDuration = 0.25;
+
+        // Step 4: Apply.
+        self.window!.rootViewController = self.revealController;
         return true
+    }
+    
+//    #pragma mark - Helpers
+    
+    func leftViewController() -> UIViewController
+    {
+        let leftViewController = UIViewController();
+        leftViewController.view.backgroundColor = UIColor.yellowColor();
+
+        let presentationModeButton = UIButton(frame: CGRectMake(20.0, 60.0, 180.0, 30.0));
+        presentationModeButton.setTitle("Presentation Mode", forState: UIControlState.Normal);
+        presentationModeButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal);
+        // see : http://stackoverflow.com/questions/24007650/selector-in-swift
+        presentationModeButton.addTarget(self.revealController, action: Selector("startPresentationMode"), forControlEvents: UIControlEvents.TouchUpInside);
+        leftViewController.view.addSubview(presentationModeButton);
+        
+        return leftViewController;
+    }
+    
+    func rightViewController() -> UIViewController
+    {
+        let rightViewController = UIViewController();
+        rightViewController.view.backgroundColor = UIColor.redColor();
+    
+        let presentationModeButton = UIButton(frame: CGRectMake(UIScreen.mainScreen().bounds.width-200.0, 60.0, 180.0, 30.0));
+        presentationModeButton.autoresizingMask = UIViewAutoresizing.FlexibleLeftMargin;
+        presentationModeButton.setTitle("Presentation Mode", forState: UIControlState.Normal);
+        presentationModeButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal);
+        presentationModeButton.addTarget(self.revealController, action: Selector("startPresentationMode"), forControlEvents: UIControlEvents.TouchUpInside);
+    
+        rightViewController.view.addSubview(presentationModeButton);
+    
+        return rightViewController;
+    }
+    
+    func startPresentationMode()
+    {
+        if (!self.revealController!.isPresentationModeActive)
+        {
+            self.revealController?.enterPresentationModeAnimated(true, completion: nil);
+        }
+        else
+        {
+            self.revealController?.resignPresentationModeEntirely(false, animated: true, completion: nil);
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
