@@ -37,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKRevealing {
         return true
     }
     
-//    #pragma mark - Helpers
-    
+    // see : http://stackoverflow.com/questions/24183812/swift-warning-equivalent
+    @available(iOS, deprecated=1.0, message="pragma mark - Helpers, not finished yet")
     func leftViewController() -> UIViewController
     {
         let leftViewController = UIViewController();
